@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>青龙 安装教程</title>
+    <url>/2021/05/08/qinglong-docker-build/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>青龙采用全新的设计方式，颜值即正义的设计理念为大家带来更加个性化和人性化的交互方式。截止到当前博客创建时间，青龙即将迎来2.0，如果大家有什么好的建议，请前往 👉 <a href="https://comments.app/view/JMyzrsnx">反馈地址</a> 提交您的宝贵意见，感谢大家一直以来对<a href="https://github.com/whyour">whyour大佬</a> 的支持 ^_^ <a href="https://t.me/c/1465257366/34">☕鼓励一下☕</a></p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Docker</li>
+<li>代理 (尽量满足)</li>
+</ul>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Host方式"><a href="#Host方式" class="headerlink" title="Host方式"></a>Host方式</h3><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -dit \</span></span><br><span class="line"><span class="language-bash">  --name QL \</span></span><br><span class="line"><span class="language-bash">  --hostname QL \</span></span><br><span class="line"><span class="language-bash">  --restart always \</span></span><br><span class="line"><span class="language-bash">  -p 5700:5700 \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/config:/ql/config \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/log:/ql/log \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/db:/ql/db \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/scripts:/ql/scripts \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/jbot:/ql/jbot \</span></span><br><span class="line"><span class="language-bash">  whyour/qinglong:latest</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="MacVlan方式"><a href="#MacVlan方式" class="headerlink" title="MacVlan方式"></a>MacVlan方式</h3><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -dit \</span></span><br><span class="line"><span class="language-bash">  --name QL \</span></span><br><span class="line"><span class="language-bash">  --hostname QL \</span></span><br><span class="line"><span class="language-bash">  --restart always \</span></span><br><span class="line"><span class="language-bash">  --net=macnet \</span></span><br><span class="line"><span class="language-bash">  --ip=192.168.2.20 \</span></span><br><span class="line"><span class="language-bash">  --dns=192.168.2.2 \</span></span><br><span class="line"><span class="language-bash">  --mac-address C2:F2:9C:C5:B1:01 \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/config:/ql/config \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/log:/ql/log \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/db:/ql/db \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/scripts:/ql/scripts \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/jbot:/ql/jbot \</span></span><br><span class="line"><span class="language-bash">  whyour/qinglong:latest</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Docker</category>
+        <category>qinglong</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>折腾</tag>
+        <tag>qinglong</tag>
+        <tag>whyour</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>elecV2P 安装教程</title>
     <url>/2021/02/07/elecV2P-docker-build/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://github.com/elecV2/elecV2P">elecV2P</a> - customize personal network. 一款基于 NodeJS，可通过 JS 修改网络请求，以及定时运行脚本或 SHELL 指令的网络工具。</p>
@@ -63,6 +87,29 @@
       </tags>
   </entry>
   <entry>
+    <title>当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？</title>
+    <url>/2021/02/23/n1-etho-macvlan-2/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>擦没擦出花火我不知道，问题搞得我很头大😤😤😤，目前没有找到最完美的解决方案，以下方法仍有缺陷。。。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>N1旁路由设置需要给lan接口开启桥接功能，Docker使用macvlan时需要关闭lan接口的桥接功能。真是陷入两难的困境。</p>
+<h2 id="临时解决方案"><a href="#临时解决方案" class="headerlink" title="临时解决方案"></a>临时解决方案</h2><ul>
+<li>关闭lan接口的桥接功能</li>
+<li>防火墙添加 <code>iptables -t nat -I POSTROUTING -j MASQUERADE</code> 规则</li>
+<li>此方法有个严重弊端，如果你的带宽超过200M，此方法会严重拖累你的网速，极限网速200M，酌情使用</li>
+</ul>
+]]></content>
+      <categories>
+        <category>N1</category>
+        <category>macvlan</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>折腾</tag>
+        <tag>N1</tag>
+        <tag>macvlan</tag>
+        <tag>网络配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macvlan模式容器与宿主机通信问题</title>
     <url>/2021/02/23/n1-eth0-macvlan/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Docker的macvlan模式非常好用（吹爆），但是该模式有一个重大缺陷，<strong>宿主机与容器无法直接通信</strong>，如宿主机ping容器的IP，尽管他们属于同一网段，但是也是ping不通的，反之亦然。<br>因为该模式在设计的时候，为了安全禁止了宿主机与容器的直接通信，不过解决的方法其实也很简单——宿主机虽然没办法直接和容器内的macvlan接口通信，但是只要在宿主机上再建立一个macvlan，然后修改路由表，使数据经由<strong>宿主机下的macvlan</strong>传输到<strong>容器内的macvlan</strong>即可。</p>
@@ -91,53 +138,6 @@
 <p>ip route add <strong>192.168.2.11</strong> dev mynet</p>
 </blockquote>
 </li>
-</ul>
-]]></content>
-      <categories>
-        <category>N1</category>
-        <category>macvlan</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>折腾</tag>
-        <tag>N1</tag>
-        <tag>macvlan</tag>
-        <tag>网络配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>青龙 安装教程</title>
-    <url>/2021/05/08/qinglong-docker-build/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>青龙采用全新的设计方式，颜值即正义的设计理念为大家带来更加个性化和人性化的交互方式。截止到当前博客创建时间，青龙即将迎来2.0，如果大家有什么好的建议，请前往 👉 <a href="https://comments.app/view/JMyzrsnx">反馈地址</a> 提交您的宝贵意见，感谢大家一直以来对<a href="https://github.com/whyour">whyour大佬</a> 的支持 ^_^ <a href="https://t.me/c/1465257366/34">☕鼓励一下☕</a></p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>Docker</li>
-<li>代理 (尽量满足)</li>
-</ul>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Host方式"><a href="#Host方式" class="headerlink" title="Host方式"></a>Host方式</h3><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -dit \</span></span><br><span class="line"><span class="language-bash">  --name QL \</span></span><br><span class="line"><span class="language-bash">  --hostname QL \</span></span><br><span class="line"><span class="language-bash">  --restart always \</span></span><br><span class="line"><span class="language-bash">  -p 5700:5700 \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/config:/ql/config \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/log:/ql/log \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/db:/ql/db \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/scripts:/ql/scripts \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/jbot:/ql/jbot \</span></span><br><span class="line"><span class="language-bash">  whyour/qinglong:latest</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="MacVlan方式"><a href="#MacVlan方式" class="headerlink" title="MacVlan方式"></a>MacVlan方式</h3><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -dit \</span></span><br><span class="line"><span class="language-bash">  --name QL \</span></span><br><span class="line"><span class="language-bash">  --hostname QL \</span></span><br><span class="line"><span class="language-bash">  --restart always \</span></span><br><span class="line"><span class="language-bash">  --net=macnet \</span></span><br><span class="line"><span class="language-bash">  --ip=192.168.2.20 \</span></span><br><span class="line"><span class="language-bash">  --dns=192.168.2.2 \</span></span><br><span class="line"><span class="language-bash">  --mac-address C2:F2:9C:C5:B1:01 \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/config:/ql/config \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/log:/ql/log \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/db:/ql/db \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/scripts:/ql/scripts \</span></span><br><span class="line"><span class="language-bash">  -v <span class="variable">$PWD</span>/QL/jbot:/ql/jbot \</span></span><br><span class="line"><span class="language-bash">  whyour/qinglong:latest</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Docker</category>
-        <category>qinglong</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>折腾</tag>
-        <tag>qinglong</tag>
-        <tag>whyour</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？</title>
-    <url>/2021/02/23/n1-etho-macvlan-2/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>擦没擦出花火我不知道，问题搞得我很头大😤😤😤，目前没有找到最完美的解决方案，以下方法仍有缺陷。。。</p>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>N1旁路由设置需要给lan接口开启桥接功能，Docker使用macvlan时需要关闭lan接口的桥接功能。真是陷入两难的困境。</p>
-<h2 id="临时解决方案"><a href="#临时解决方案" class="headerlink" title="临时解决方案"></a>临时解决方案</h2><ul>
-<li>关闭lan接口的桥接功能</li>
-<li>防火墙添加 <code>iptables -t nat -I POSTROUTING -j MASQUERADE</code> 规则</li>
-<li>此方法有个严重弊端，如果你的带宽超过200M，此方法会严重拖累你的网速，极限网速200M，酌情使用</li>
 </ul>
 ]]></content>
       <categories>
