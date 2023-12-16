@@ -1,4 +1,4 @@
-﻿#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+﻿﻿#EXTM3U x-tvg-url="https://live.fanmingming.com/e.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://raw.githubusercontent.com/sumingyd/Telecom-Shandong-IPTV-List/main/img/CCTV1.png" group-title="综合",CCTV1
 http://150.138.8.143/00/SNM/CHANNEL00000311/index.m3u8
 #EXTINF:-1,tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://raw.githubusercontent.com/sumingyd/Telecom-Shandong-IPTV-List/main/img/CCTV2.png" group-title="财经",CCTV2
@@ -104,7 +104,8 @@ http://150.138.8.143/00/SNM/CHANNEL00000366/index.m3u8
 http://150.138.8.143/00/SNM/CHANNEL00000335/index.m3u8
 #EXTINF:-1,tvg-id="河北卫视" tvg-name="河北卫视" tvg-logo="https://raw.githubusercontent.com/sumingyd/Telecom-Shandong-IPTV-List/main/img/河北卫视.png" group-title="卫视",河北卫视
 http://150.138.8.143/00/SNM/CHANNEL00000330/index.m3u8
-
+#EXTINF:-1,tvg-id="山东卫视" tvg-name="山东卫视" tvg-logo="https://raw.githubusercontent.com/sumingyd/Telecom-Shandong-IPTV-List/main/img/山东卫视.png" group-title="卫视",山东卫视
+http://222.134.240.136:9901/tsfile/live/0131_1.m3u8?url=tvzb.com
 
 #EXTINF:-1,tvg-id="中国交通" tvg-name="中国交通" tvg-logo="https://raw.githubusercontent.com/sumingyd/Telecom-Shandong-IPTV-List/main/img/中国交通.png" group-title="交通",中国交通
 http://150.138.8.143/00/SNM/CHANNEL00000073/index.m3u8
