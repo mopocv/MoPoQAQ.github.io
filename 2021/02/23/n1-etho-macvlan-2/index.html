@@ -17,12 +17,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"mopo.tk","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":20,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mopo.wiki","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":20,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="简介擦没擦出花火我不知道，问题搞得我很头大😤😤😤，目前没有找到最完美的解决方案，以下方法仍有缺陷。。。 问题描述N1旁路由设置需要给lan接口开启桥接功能，Docker使用macvlan时需要关闭lan接口的桥接功能。真是陷入两难的困境。 临时解决方案 关闭lan接口的桥接功能 防火墙添加 iptables -t nat -I POSTROUTING -j MASQUERADE 规则 此方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？">
-<meta property="og:url" content="https://mopo.tk/2021/02/23/n1-etho-macvlan-2/index.html">
+<meta property="og:url" content="https://mopo.wiki/2021/02/23/n1-etho-macvlan-2/index.html">
 <meta property="og:site_name" content="mopo blog&#39;s">
 <meta property="og:description" content="简介擦没擦出花火我不知道，问题搞得我很头大😤😤😤，目前没有找到最完美的解决方案，以下方法仍有缺陷。。。 问题描述N1旁路由设置需要给lan接口开启桥接功能，Docker使用macvlan时需要关闭lan接口的桥接功能。真是陷入两难的困境。 临时解决方案 关闭lan接口的桥接功能 防火墙添加 iptables -t nat -I POSTROUTING -j MASQUERADE 规则 此方法">
 <meta property="og:locale" content="zh_CN">
@@ -37,11 +37,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://mopo.tk/2021/02/23/n1-etho-macvlan-2/">
+<link rel="canonical" href="https://mopo.wiki/2021/02/23/n1-etho-macvlan-2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://mopo.tk/2021/02/23/n1-etho-macvlan-2/","path":"2021/02/23/n1-etho-macvlan-2/","title":"当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://mopo.wiki/2021/02/23/n1-etho-macvlan-2/","path":"2021/02/23/n1-etho-macvlan-2/","title":"当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？ | mopo blog's</title>
@@ -205,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mopo.tk/2021/02/23/n1-etho-macvlan-2/">
+    <link itemprop="mainEntityOfPage" href="https://mopo.wiki/2021/02/23/n1-etho-macvlan-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -290,7 +290,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://mopo.tk/2021/02/23/n1-etho-macvlan-2/" title="当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？">https://mopo.tk/2021/02/23/n1-etho-macvlan-2/</a>
+      <a href="https://mopo.wiki/2021/02/23/n1-etho-macvlan-2/" title="当N1旁路由与OpenWrt下的Docker碰撞，会擦出怎么样的火花？">https://mopo.wiki/2021/02/23/n1-etho-macvlan-2/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh_CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
